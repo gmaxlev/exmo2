@@ -1,0 +1,11 @@
+.gradient {
+  padding-top: 100px;
+  background: linear-gradient(
+    180deg,
+    #f2f8ff 29.69%,
+    rgba(242, 248, 255, 0) 100%
+  );
+  @include media-breakpoint-down(xs) {
+    padding-top: 50px;
+  }
+}

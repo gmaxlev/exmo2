@@ -1,0 +1,6 @@
+.section-modules {
+  margin: 119px 0 100px;
+  @include media-breakpoint-down(xs) {
+    margin: 25px 0;
+  }
+}

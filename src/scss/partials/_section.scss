@@ -1,0 +1,6 @@
+.section {
+  margin: 90px 0;
+  @include media-breakpoint-down(xs) {
+    margin: 40px 0;
+  }
+}

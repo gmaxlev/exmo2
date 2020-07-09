@@ -1,0 +1,40 @@
+.footnav {
+  display: flex;
+  justify-content: space-between;
+  @include media-breakpoint-down(xs) {
+    flex-wrap: wrap;
+  }
+}
+
+.footnav__cat {
+  @include media-breakpoint-down(xs) {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+.footnav__name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 2rem;
+  margin-bottom: 15px;
+}
+.footnav__list {
+  display: inline-flex;
+  flex-direction: column;
+}
+.footnav__item {
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 0.9375rem;
+  color: $color-22;
+  transition: color $transition-time;
+
+  &:hover {
+    color: #fff;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,3 +1,15 @@
 /* 
     Глобальные стили
 */
+body,
+html {
+  height: auto;
+  min-height: 100%;
+}
+body {
+  font-family: $font-1;
+  color: $color-4;
+}
+a {
+  text-decoration: none;
+}

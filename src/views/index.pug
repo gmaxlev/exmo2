@@ -12,8 +12,12 @@ html(lang="ru")
         title Title
 
         link(rel="stylesheet", href="css/main.css")
+        link(rel="stylesheet", href="vendor/animate.min.css")
+        link(rel="stylesheet", href="vendor/swiper/swiper.min.css")
         
         script(src="vendor/jquery.min.js")
+        script(src="vendor/swiper/swiper.min.js")
+        script(src="vendor/wow.min.js")
 
         // =====================
         // ЗАГРУЗКА SVG СПРАЙТОВ
@@ -36,3 +40,411 @@ html(lang="ru")
         // =========================
             
     body
+
+        .wrapper
+
+            // ======
+            // HEADER
+            // ======
+            header.header.wow.fadeInDown
+                .container.header__content
+                    .header__logo
+                        img(src='img/logo.svg', alt='')
+                    .header__imgs
+                        img(src='img/Stellar-Education-1.png', alt='')
+                    nav.header__nav
+                        ul.nav
+                            li.nav__item
+                                a(href='' data-scrollto="section-overview") Course overview
+                            li.nav__item
+                                a(href='' data-scrollto="section-howitworks") How it works?
+                            li.nav__item
+                                a(href='' data-scrollto="section-price") Price
+                            li.nav__item
+                                a(href='' data-scrollto="section-about") About
+                            li.nav__item
+                                a(href='' data-scrollto="section-other") Other courses
+                    button.header__menu
+                        +svg-sprite('svgsprite_hamburger', 'svg-sprite')
+            // ==========
+            // END HEADER
+            // ==========
+
+            // ===========
+            // MOBILE MENU
+            // ===========
+            .mobmenu
+                button.mobmenu__close
+                    +svg-sprite('svgsprite_close', 'svg-sprite')
+                ul.mobmenu__list
+                    li.mobmenu__item
+                        a(href='' data-scrollto="section-overview") Course overview
+                    li.mobmenu__item
+                        a(href='' data-scrollto="section-howitworks") How it works?
+                    li.mobmenu__item
+                        a(href='' data-scrollto="section-price") Price
+                    li.mobmenu__item
+                        a(href='' data-scrollto="section-about") About
+                    li.mobmenu__item
+                        a(href='' data-scrollto="section-other") Other courses
+            // ===============
+            // END MOBILE MENU
+            // ===============
+
+            // ===========
+            // ПРИВЕТСТВИЕ
+            // ===========
+            .intro
+                .intro__back
+                    .intro__grid
+                    .intro__gr
+                    .intro__b1
+                    .intro__b2
+                    .intro__numbers
+                .container.intro__content
+                    h1.intro__header.wow.fadeInUp
+                        | EXMO Financial 
+                        br
+                        | Trading course
+                    p.intro__comment.wow.fadeInUp(data-wow-delay="0.5s") You'll find all the trading basics you need to know to get started on your journey here. Become not just a user, become a professional!
+                    .intro__act.wow.fadeInUp(data-wow-delay="1s")
+                        button.button.button_a(data-scrollto="section-about")
+                            +svg-sprite('svgsprite_play_1', 'svg-sprite')
+                            span Watch now
+            // ===============
+            // END ПРИВЕТСТВИЕ
+            // ===============
+
+            // =======
+            // ПРО НАС
+            // =======
+            .container
+                .aboutus#section-overview
+                    img.aboutus__bg(src='img/map.svg', alt='')
+                    .aboutus__item.wow.fadeInUp
+                        .aboutus__value.aboutus__value_years 30
+                        .aboutus__about Years experience in Trading Financial markets and teaching students
+                    .aboutus__item.wow.fadeInUp(data-wow-delay="0.2s")
+                        .aboutus__value.aboutus__value_traders 1000+
+                        .aboutus__about Successfully educated traders
+                    .aboutus__item.wow.fadeInUp(data-wow-delay="0.4s")
+                        .aboutus__value.aboutus__value_revenue ~2300$
+                        .aboutus__about The average trader's revenue after the course
+            // =======
+            // ПРО НАС
+            // =======
+
+            // ==============
+            // COURSE MODULES
+            // ==============
+            section.section-modules
+                .container
+                    h2.section-header.wow.fadeIn This course has FIVE modules
+                    .course-modules
+                        .course-modules__item.wow.fadeIn
+                            .course-modules__icon.course-modules__icon_growth
+                                +svg-sprite('svgsprite_growth', 'svg-sprite')
+                            .course-modules__name Introduction to Trading
+                            .course-modules__about
+                                | An opening video sets the scene for this 6-unit module, covering financial markets, the need for fundamental and technical analysis and the importance of psychology for the trader.
+                        .course-modules__item.wow.fadeIn(data-wow-delay="0.1s")
+                            .course-modules__icon.course-modules__icon_bitcoin
+                                +svg-sprite('svgsprite_bitcoin', 'svg-sprite')
+                            .course-modules__name Financial Products
+                            .course-modules__about
+                                | Cryptocurrency heads up this 6-unit module which also features units on the Commodities, Forex, Indices, Options & STIRS markets.
+                        .course-modules__item.wow.fadeIn(data-wow-delay="0.2s")
+                            .course-modules__icon.course-modules__icon_graph
+                                +svg-sprite('svgsprite_graph', 'svg-sprite')
+                            .course-modules__name Technical Analysis
+                            .course-modules__about
+                                | A video highlights the importance of TA in this 6-unit module, with detailed explanations for the trader on key subjects such as Trends, Bollinger Bands & Fibonacci numbers.
+                        .course-modules__item.wow.fadeIn(data-wow-delay="0.3s")
+                            .course-modules__icon.course-modules__icon_question
+                                +svg-sprite('svgsprite_question', 'svg-sprite')
+                            .course-modules__name The Psychology of Trading
+                            .course-modules__about
+                                | This 2-unit module provides detailed explanation of the critical value placed on market and trader psychology.
+                        .course-modules__item.wow.fadeIn(data-wow-delay="0.4s")
+                            .course-modules__icon.course-modules__icon_protection
+                                +svg-sprite('svgsprite_protection', 'svg-sprite')
+                            .course-modules__name Risk & Money Management
+                            .course-modules__about
+                                | The final 2-unit module focuses the trader on key topics such as leverage, margins, risk strategies, stop losses and risk & money management.
+            // ==================
+            // END COURSE MODULES
+            // ==================
+            
+            // =============
+            // HOW IT WORKS?
+            // =============
+            .gradient#section-howitworks
+                .container
+                    h2.section-header.wow.fadeIn How it works?
+                    .steps
+                        .steps__item.steps__item_content.wow.fadeInUp
+                            .steps__icon.steps__icon_register
+                                +svg-sprite('svgsprite_register', 'svg-sprite')
+                            .steps__name 1.Register
+                        .steps__item.steps__item_separator.wow.fadeInUp(data-wow-delay="0.1s")
+                            +svg-sprite('svgsprite_separator_1', 'svg-sprite')
+                        .steps__item.steps__item_content.wow.fadeInUp(data-wow-delay="0.2s")
+                            .steps__icon.steps__icon_learn
+                                +svg-sprite('svgsprite_learn', 'svg-sprite')
+                            .steps__name 2.Learn the course materials
+                        .steps__item.steps__item_separator.wow.fadeInUp(data-wow-delay="0.3s")
+                            +svg-sprite('svgsprite_separator_2', 'svg-sprite')
+                        .steps__item.steps__item_content.wow.fadeInUp(data-wow-delay="0.4s")
+                            .steps__icon.steps__icon_exam
+                                +svg-sprite('svgsprite_exam', 'svg-sprite')
+                            .steps__name 3.Pass exams
+                        .steps__item.steps__item_separator.wow.fadeInUp(data-wow-delay="0.5s")
+                            +svg-sprite('svgsprite_separator_1', 'svg-sprite')
+                        .steps__item.steps__item_content.steps__item_end.wow.fadeInUp(data-wow-delay="0.6s")
+                            .steps__icon.steps__icon_certificate
+                                +svg-sprite('svgsprite_certificate', 'svg-sprite')
+                            .steps__name 4.Get CPD certificate
+                    .steps-register.wow.fadeIn
+                        button.button.button_b Register
+            // =================
+            // END HOW IT WORKS?
+            // =================
+
+            // =====
+            // PRICE
+            // =====
+            .container#section-price
+                .price.wow.fadeIn
+                    .price__back
+                        .price__b1
+                        .price__b2
+                        .price__top
+                        .price__numbers
+                    .price__content
+                        .price__text
+                            .price__header Price
+                            .price__old
+                                span 599 GBP
+                            .price__sum
+                                span 250 GBP
+                                span VAT included
+                            .price__comment
+                                | The money you pay will be credited to your EXMO account. 
+                                br
+                                | So the course is free for you
+                            .price__act
+                                button.button.button_b Start course
+                        .price__img
+                            +svg-sprite('svgsprite_strright', 'svg-sprite')
+                            img(src="img/table.svg", alt="")
+                        .price__actmob.wow.fadeInUp(data-wow-delay="1s")
+                                button.button.button_b Start course
+            // =========
+            // END PRICE
+            // =========
+            
+            // =====
+            // VIDEO
+            // =====
+            section.section#section-about.wow.fadeInUp
+                .container
+                    h2.section-header Introduction to the course
+                    .videoplay(style="background-image: url(img/video.png)")
+                        .videoplay__go
+                            +svg-sprite('svgsprite_play_1', 'svg-sprite')
+                        .videoplay__video#introduction-video
+            // =========
+            // END VIDEO
+            // =========
+
+            // =======
+            // REVIEWS
+            // =======
+            section.section
+                .container
+                    h2.section-header.wow.fadeInUp Reviews
+                    .reviews
+                        .swiper-container#slider-reviews
+                            .swiper-wrapper
+                                .swiper-slide
+                                    .reviews__item.wow.fadeIn(data-wow-delay="0.1s")
+                                        .reviews__info
+                                            .reviews__text “Well, where do I start? Firstly, it’s safe to say, it’s not like any other course, it showed me just pure cold hard facts.”
+                                        .reviews__author
+                                            img(src="img/author-1.png", alt="")
+                                            span Faisal Chaudhry
+                                .swiper-slide
+                                    .reviews__item.wow.fadeIn(data-wow-delay="0.3s")
+                                        .reviews__info
+                                            .reviews__text
+                                                | “I had very little knowledge on what it meant to be a futures trader, but soon after joining the course it wasn’t long until I found myself immersed in the markets!
+                                                p.reviews__hidden “I had very little knowledge on what it meant to be a futures trader, but soon after joining the course it wasn’t long until I found myself immersed in the markets!
+                                            .reviews__more
+                                                a(href="") Read more
+                                        .reviews__author
+                                            img(src="img/author-2.png", alt="")
+                                            span Yussef El Mansouri
+                                .swiper-slide
+                                    .reviews__item.wow.fadeIn(data-wow-delay="0.5s")
+                                        .reviews__info
+                                            .reviews__text “Very informative and easy to understand courses. What’s important is that I learned to apply all the trading techniques in practice and they really work!”
+                                        .reviews__author
+                                            img(src="img/author-3.png", alt="")
+                                            span Lilly Marvin
+                        .reviews__nav#slider-reviews-nav
+                            span
+                            span
+                            span
+                            span
+                        .reviews__act.wow.fadeIn
+                            button.button.button_b Join Course
+            // =======
+            // REVIEWS
+            // =======
+
+            // =====
+            // SITES
+            // =====
+            .gradient
+                .container
+                    .sites
+                        .sites__item.wow.fadeInUp(data-wow-delay="0.1s")
+                            .sites__img
+                                img(src="img/Stellar-Education-2.png", alt="")
+                            .sites__about
+                                p Is the world’s first UK Government SKILLSFIRST accredited training provider offering an insight into the world of finance and trading online.
+                                p Stellar Education currently have 2 SKILLSFIRST accredited courses in Financial Trading – Level 3 and Level 5. Ideal for someone looking to trade part-time or look for a career in the Financial world. You can learn at your own pace with our experienced traders available for Skype calls if you have any questions.
+                                p Both courses are recognised in banks and other Financial Institutions worldwide as the courses have their UK SKILLSFIRST status.
+                                p Stellar Education uses a bespoke learning management system (LMS) for the delivery of the qualifications and they are assessed using our unique Online Invigilation System, which cannot be cheated or manipulated and is itself meets the strict guidelines set by awarding organisations regulated by SKILLSFIRST.
+                        .sites__item.wow.fadeInUp(data-wow-delay="0.2s")
+                            .sites__img
+                                img(src="img/logo-2.png", alt="")
+                            .sites__about
+                                p Is a British cryptocurrency exchange. The platform was established in 2013 and is constantly expanding its functionality, adding new assets to the listing, and, most importantly, increasing the number of customers. Now with more than 1.8 million users registered on EXMO, the average monthly trading volume exceeds $1.5 billion.
+                                p More than six years of operation without data leaks and hacks, flexible commissions, and fast technical support – these are among a list of reasons why clients choose EXMO. The exchange team stood at the origins of the crypto business, and during this time, we understood how to make trading convenient. We pride ourselves on EXMO's simple, intuitive interface, allowing users to begin their journey in crypto-trading easily.
+            // =====
+            // SITES
+            // =====
+
+            // =============
+            // OTHER COURSES
+            // =============
+            section.section#section-other
+                .container
+                    h2.section-header.wow.fadeIn Other courses
+                    .other
+                        .other__item.wow.fadeInUp(data-wow-delay="0.1s")
+                            .panel
+                                .panel__image(style="background-image: url(img/other-1.png)")
+                                .panel__content
+                                    .panel__hide
+                                    button.panel__close
+                                        +svg-sprite('svgsprite_close', 'svg-sprite')
+                                    .panel__show
+                                    .panel__header Skillsfirst level 3 certificate in financial trading (rqf)
+                                    .panel__text
+                                        p Stellar Educations SKILLSFIRST Regulated 4 – 6 week high-impact Level 3 Certificate in Financial Trading course gives you the skills that you need to start trading on the market, or pursue a career within finance. Whether you want to increase your personal investment portfolio or develop your career within finance, this course will show you how to do it compliantly, effectively and safely.
+                                        p.panel__hidden Stellar Educations SKILLSFIRST Regulated 4 – 6 week high-impact Level 3 Certificate in Financial Trading course gives you the skills that you need to start trading on the market, or pursue a career within finance. Whether you want to increase your personal investment portfolio or develop your career within finance, this course will show you how to do it compliantly, effectively and safely.
+                                    a(href="").more
+                                        span Learn more
+                                        +svg-sprite('svgsprite_link', 'svg-sprite')
+                        .other__item.wow.fadeInUp(data-wow-delay="0.2s")
+                            .panel
+                                .panel__image(style="background-image: url(img/other-2.png)")
+                                .panel__content
+                                    .panel__hide
+                                    button.panel__close
+                                        +svg-sprite('svgsprite_close', 'svg-sprite')
+                                    .panel__show
+                                    .panel__header Skillsfirst level 5 diploma in financial trading (rqf)
+                                    .panel__text
+                                        p This 100% online SKILLSFIRST Accredited programme has been designed to develop candidates into independent proprietary trading professionals who wish to pursue a full-time trading career, or pursue a career in finance. Initially, the trainee will be introduced to the global financial futures markets, and acquire a broad overview across a wide level of different futures trading strategies such as outright trading, spreads trading (including inter-exchange, intra-exchange and inter-commodity spreads) and arbitrage used across the FX, Fixed Income, Equities and Commodities markets.
+                                        p.panel__hidden Stellar Educations SKILLSFIRST Regulated 4 – 6 week high-impact Level 3 Certificate in Financial Trading course gives you the skills that you need to start trading on the market, or pursue a career within finance. Whether you want to increase your personal investment portfolio or develop your career within finance, this course will show you how to do it compliantly, effectively and safely.
+                                    a(href="").more
+                                        span Learn more
+                                        +svg-sprite('svgsprite_link', 'svg-sprite')
+            // =================
+            // END OTHER COURSES
+            // =================
+
+            // ======
+            // FOOTER
+            // ======
+            footer.footer
+                .container
+                    .footer__content
+                        .footer__top
+                            .footer__nav
+                                .footnav
+                                    .footnav__cat
+                                        .footnav__name Products
+                                        .footnav__list
+                                            a(href="").footnav__item Funding
+                                            a(href="").footnav__item Trade
+                                            a(href="").footnav__item Cashback
+                                            a(href="").footnav__item Referral Program
+                                            a(href="").footnav__item EXMO Turkey
+                                            a(href="").footnav__item VIP-clients
+                                            a(href="").footnav__item OTC-Trading
+                                            a(href="").footnav__item EXMO Coin
+                                            a(href="").footnav__item Voting
+                                    .footnav__cat
+                                        .footnav__name Information
+                                        .footnav__list
+                                            a(href="").footnav__item Customer support
+                                            a(href="").footnav__item EXMOWIKI
+                                            a(href="").footnav__item Fees & Limits
+                                            a(href="").footnav__item Articles
+                                            a(href="").footnav__item API
+                                    .footnav__cat
+                                        .footnav__name Company
+                                        .footnav__list
+                                            a(href="").footnav__item Contacts
+                                            a(href="").footnav__item News
+                                            a(href="").footnav__item About Us
+                                            a(href="").footnav__item Join our team
+                                            a(href="").footnav__item Apply for Listing
+                                    .footnav__cat
+                                        .footnav__name Documents
+                                        .footnav__list
+                                            a(href="").footnav__item User agreement
+                                            a(href="").footnav__item AML Policy
+                                            a(href="").footnav__item Privacy policy
+                                            a(href="").footnav__item Cross-chain recovery policy
+                            .footer__service
+                                .footer__online
+                                    .footonline
+                                        .footonline__item
+                                            .footonline__name Traders Online
+                                            .footonline__value 18998
+                                        .footonline__item
+                                            .footonline__name 24h Volume
+                                            .footonline__value 1434 BTC
+                            
+                                .footer__apps
+                                    a(href="")
+                                        +svg-sprite('svgsprite_appstore', 'svg-sprite')
+                                    a(href="")
+                                        +svg-sprite('svgsprite_googleplay', 'svg-sprite')
+                        .footer__bottom
+                            .footer__copy Copyright © EXMO 2013 — 2020, EXMO EXCHANGE LTD. 2 Kingdom Street, London, United Kingdom
+                            .footer__social
+                                a(href="")
+                                    +svg-sprite('svgsprite_facebook', 'svg-sprite')
+                                a(href="")
+                                    +svg-sprite('svgsprite_youtube', 'svg-sprite')
+                                a(href="")
+                                    +svg-sprite('svgsprite_medium', 'svg-sprite')
+                                a(href="")
+                                    +svg-sprite('svgsprite_twitter', 'svg-sprite')
+                                a(href="")
+                                    +svg-sprite('svgsprite_telegram', 'svg-sprite')
+                                a(href="")
+                                    +svg-sprite('svgsprite_instagram', 'svg-sprite')
+                                a(href="")
+                                    +svg-sprite('svgsprite_vk', 'svg-sprite')
+            // ==========
+            // END FOOTER
+            // ==========
+
+        script(src='js/main.js')

@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="vendor/animate.min.css" />
+    <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/swiper/swiper.min.js"></script>
+    <script src="vendor/wow.min.js"></script><!-- =====================-->
+    <!-- ЗАГРУЗКА SVG СПРАЙТОВ-->
+    <!-- =====================-->
+    <script>
+        $(document).ready(function() {
+            var req = new XMLHttpRequest();
+            req.onload = function(e) {
+                var svg = document.implementation.createHTMLDocument('');
+                svg.body.innerHTML = e.target.response.replace('<svg ', '<svg style="display: none"');
+                document.body.appendChild(svg.body.firstElementChild);
+                svg = null;
+            };
+            req.open('GET', './img/sprite.defs.svg', true);
+            req.responseType = 'text';
+            req.send();
+        });
+    </script><!-- =========================-->
+    <!-- END ЗАГРУЗКА SVG СПРАЙТОВ-->
+    <!-- =========================-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- ======-->
+        <!-- HEADER-->
+        <!-- ======-->
+        <header class="header wow fadeInDown">
+            <div class="container header__content">
+                <div class="header__logo"><img src="img/logo.svg" alt="" /></div>
+                <div class="header__imgs"><img src="img/Stellar-Education-1.png" alt="" /></div>
+                <nav class="header__nav">
+                    <ul class="nav">
+                        <li class="nav__item"><a href="" data-scrollto="section-overview">Course overview</a></li>
+                        <li class="nav__item"><a href="" data-scrollto="section-howitworks">How it works?</a></li>
+                        <li class="nav__item"><a href="" data-scrollto="section-price">Price</a></li>
+                        <li class="nav__item"><a href="" data-scrollto="section-about">About</a></li>
+                        <li class="nav__item"><a href="" data-scrollto="section-other">Other courses</a></li>
+                    </ul>
+                </nav><button class="header__menu"><svg class="svg-sprite">
+                        <use xlink:href="#svgsprite_hamburger"></use>
+                    </svg></button>
+            </div>
+        </header><!-- ==========-->
+        <!-- END HEADER-->
+        <!-- ==========-->
+        <!-- ===========-->
+        <!-- MOBILE MENU-->
+        <!-- ===========-->
+        <div class="mobmenu"><button class="mobmenu__close"><svg class="svg-sprite">
+                    <use xlink:href="#svgsprite_close"></use>
+                </svg></button>
+            <ul class="mobmenu__list">
+                <li class="mobmenu__item"><a href="" data-scrollto="section-overview">Course overview</a></li>
+                <li class="mobmenu__item"><a href="" data-scrollto="section-howitworks">How it works?</a></li>
+                <li class="mobmenu__item"><a href="" data-scrollto="section-price">Price</a></li>
+                <li class="mobmenu__item"><a href="" data-scrollto="section-about">About</a></li>
+                <li class="mobmenu__item"><a href="" data-scrollto="section-other">Other courses</a></li>
+            </ul>
+        </div><!-- ===============-->
+        <!-- END MOBILE MENU-->
+        <!-- ===============-->
+        <!-- ===========-->
+        <!-- ПРИВЕТСТВИЕ-->
+        <!-- ===========-->
+        <div class="intro">
+            <div class="intro__back">
+                <div class="intro__grid"></div>
+                <div class="intro__gr"></div>
+                <div class="intro__b1"></div>
+                <div class="intro__b2"></div>
+                <div class="intro__numbers"></div>
+            </div>
+            <div class="container intro__content">
+                <h1 class="intro__header wow fadeInUp">EXMO Financial <br />Trading course</h1>
+                <p class="intro__comment wow fadeInUp" data-wow-delay="0.5s">You'll find all the trading basics you need to know to get started on your journey here. Become not just a user, become a professional!</p>
+                <div class="intro__act wow fadeInUp" data-wow-delay="1s"><button class="button button_a" data-scrollto="section-about"><svg class="svg-sprite">
+                            <use xlink:href="#svgsprite_play_1"></use>
+                        </svg><span>Watch now</span></button></div>
+            </div>
+        </div><!-- ===============-->
+        <!-- END ПРИВЕТСТВИЕ-->
+        <!-- ===============-->
+        <!-- =======-->
+        <!-- ПРО НАС-->
+        <!-- =======-->
+        <div class="container">
+            <div class="aboutus" id="section-overview"><img class="aboutus__bg" src="img/map.svg" alt="" />
+                <div class="aboutus__item wow fadeInUp">
+                    <div class="aboutus__value aboutus__value_years">30</div>
+                    <div class="aboutus__about">Years experience in Trading Financial markets and teaching students</div>
+                </div>
+                <div class="aboutus__item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="aboutus__value aboutus__value_traders">1000+</div>
+                    <div class="aboutus__about">Successfully educated traders</div>
+                </div>
+                <div class="aboutus__item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="aboutus__value aboutus__value_revenue">~2300$</div>
+                    <div class="aboutus__about">The average trader's revenue after the course</div>
+                </div>
+            </div>
+        </div><!-- =======-->
+        <!-- ПРО НАС-->
+        <!-- =======-->
+        <!-- ==============-->
+        <!-- COURSE MODULES-->
+        <!-- ==============-->
+        <section class="section-modules">
+            <div class="container">
+                <h2 class="section-header wow fadeIn">This course has FIVE modules</h2>
+                <div class="course-modules">
+                    <div class="course-modules__item wow fadeIn">
+                        <div class="course-modules__icon course-modules__icon_growth"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_growth"></use>
+                            </svg></div>
+                        <div class="course-modules__name">Introduction to Trading</div>
+                        <div class="course-modules__about">An opening video sets the scene for this 6-unit module, covering financial markets, the need for fundamental and technical analysis and the importance of psychology for the trader.</div>
+                    </div>
+                    <div class="course-modules__item wow fadeIn" data-wow-delay="0.1s">
+                        <div class="course-modules__icon course-modules__icon_bitcoin"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_bitcoin"></use>
+                            </svg></div>
+                        <div class="course-modules__name">Financial Products</div>
+                        <div class="course-modules__about">Cryptocurrency heads up this 6-unit module which also features units on the Commodities, Forex, Indices, Options & STIRS markets.</div>
+                    </div>
+                    <div class="course-modules__item wow fadeIn" data-wow-delay="0.2s">
+                        <div class="course-modules__icon course-modules__icon_graph"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_graph"></use>
+                            </svg></div>
+                        <div class="course-modules__name">Technical Analysis</div>
+                        <div class="course-modules__about">A video highlights the importance of TA in this 6-unit module, with detailed explanations for the trader on key subjects such as Trends, Bollinger Bands & Fibonacci numbers.</div>
+                    </div>
+                    <div class="course-modules__item wow fadeIn" data-wow-delay="0.3s">
+                        <div class="course-modules__icon course-modules__icon_question"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_question"></use>
+                            </svg></div>
+                        <div class="course-modules__name">The Psychology of Trading</div>
+                        <div class="course-modules__about">This 2-unit module provides detailed explanation of the critical value placed on market and trader psychology.</div>
+                    </div>
+                    <div class="course-modules__item wow fadeIn" data-wow-delay="0.4s">
+                        <div class="course-modules__icon course-modules__icon_protection"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_protection"></use>
+                            </svg></div>
+                        <div class="course-modules__name">Risk & Money Management</div>
+                        <div class="course-modules__about">The final 2-unit module focuses the trader on key topics such as leverage, margins, risk strategies, stop losses and risk & money management.</div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- ==================-->
+        <!-- END COURSE MODULES-->
+        <!-- ==================-->
+        <!-- =============-->
+        <!-- HOW IT WORKS?-->
+        <!-- =============-->
+        <div class="gradient" id="section-howitworks">
+            <div class="container">
+                <h2 class="section-header wow fadeIn">How it works?</h2>
+                <div class="steps">
+                    <div class="steps__item steps__item_content wow fadeInUp">
+                        <div class="steps__icon steps__icon_register"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_register"></use>
+                            </svg></div>
+                        <div class="steps__name">1.Register</div>
+                    </div>
+                    <div class="steps__item steps__item_separator wow fadeInUp" data-wow-delay="0.1s"><svg class="svg-sprite">
+                            <use xlink:href="#svgsprite_separator_1"></use>
+                        </svg></div>
+                    <div class="steps__item steps__item_content wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="steps__icon steps__icon_learn"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_learn"></use>
+                            </svg></div>
+                        <div class="steps__name">2.Learn the course materials</div>
+                    </div>
+                    <div class="steps__item steps__item_separator wow fadeInUp" data-wow-delay="0.3s"><svg class="svg-sprite">
+                            <use xlink:href="#svgsprite_separator_2"></use>
+                        </svg></div>
+                    <div class="steps__item steps__item_content wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="steps__icon steps__icon_exam"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_exam"></use>
+                            </svg></div>
+                        <div class="steps__name">3.Pass exams</div>
+                    </div>
+                    <div class="steps__item steps__item_separator wow fadeInUp" data-wow-delay="0.5s"><svg class="svg-sprite">
+                            <use xlink:href="#svgsprite_separator_1"></use>
+                        </svg></div>
+                    <div class="steps__item steps__item_content steps__item_end wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="steps__icon steps__icon_certificate"><svg class="svg-sprite">
+                                <use xlink:href="#svgsprite_certificate"></use>
+                            </svg></div>
+                        <div class="steps__name">4.Get CPD certificate</div>
+                    </div>
+                </div>
+                <div class="steps-register wow fadeIn"><button class="button button_b">Register</button></div>
+            </div>
+        </div><!-- =================-->
+        <!-- END HOW IT WORKS?-->
+        <!-- =================-->
+        <!-- =====-->
+        <!-- PRICE-->
+        <!-- =====-->
+        <div class="container" id="section-price">
+            <div class="price wow fadeIn">
+                <div class="price__back">
+                    <div class="price__b1"></div>
+                    <div class="price__b2"></div>
+                    <div class="price__top"></div>
+                    <div class="price__numbers"></div>
+                </div>
+                <div class="price__content">
+                    <div class="price__text">
+                        <div class="price__header">Price</div>
+                        <div class="price__old"><span>599 GBP</span></div>
+                        <div class="price__sum"><span>250 GBP</span><span>VAT included</span></div>
+                        <div class="price__comment">The money you pay will be credited to your EXMO account. <br />So the course is free for you</div>
+                        <div class="price__act"><button class="button button_b">Start course</button></div>
+                    </div>
+                    <div class="price__img"><svg class="svg-sprite">
+                            <use xlink:href="#svgsprite_strright"></use>
+                        </svg><img src="img/table.svg" alt="" /></div>
+                    <div class="price__actmob wow fadeInUp" data-wow-delay="1s"><button class="button button_b">Start course</button></div>
+                </div>
+            </div>
+        </div><!-- =========-->
+        <!-- END PRICE-->
+        <!-- =========-->
+        <!-- =====-->
+        <!-- VIDEO-->
+        <!-- =====-->
+        <section class="section wow fadeInUp" id="section-about">
+            <div class="container">
+                <h2 class="section-header">Introduction to the course</h2>
+                <div class="videoplay" style="background-image: url(img/video.png)">
+                    <div class="videoplay__go"><svg class="svg-sprite">
+                            <use xlink:href="#svgsprite_play_1"></use>
+                        </svg></div>
+                    <div class="videoplay__video" id="introduction-video"></div>
+                </div>
+            </div>
+        </section><!-- =========-->
+        <!-- END VIDEO-->
+        <!-- =========-->
+        <!-- =======-->
+        <!-- REVIEWS-->
+        <!-- =======-->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-header wow fadeInUp">Reviews</h2>
+                <div class="reviews">
+                    <div class="swiper-container" id="slider-reviews">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="reviews__item wow fadeIn" data-wow-delay="0.1s">
+                                    <div class="reviews__info">
+                                        <div class="reviews__text">“Well, where do I start? Firstly, it’s safe to say, it’s not like any other course, it showed me just pure cold hard facts.”</div>
+                                    </div>
+                                    <div class="reviews__author"><img src="img/author-1.png" alt="" /><span>Faisal Chaudhry</span></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__item wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="reviews__info">
+                                        <div class="reviews__text">“I had very little knowledge on what it meant to be a futures trader, but soon after joining the course it wasn’t long until I found myself immersed in the markets!<p class="reviews__hidden">“I had very little knowledge on what it meant to be a futures trader, but soon after joining the course it wasn’t long until I found myself immersed in the markets!</p>
+                                        </div>
+                                        <div class="reviews__more"><a href="">Read more</a></div>
+                                    </div>
+                                    <div class="reviews__author"><img src="img/author-2.png" alt="" /><span>Yussef El Mansouri</span></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__item wow fadeIn" data-wow-delay="0.5s">
+                                    <div class="reviews__info">
+                                        <div class="reviews__text">“Very informative and easy to understand courses. What’s important is that I learned to apply all the trading techniques in practice and they really work!”</div>
+                                    </div>
+                                    <div class="reviews__author"><img src="img/author-3.png" alt="" /><span>Lilly Marvin</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__nav" id="slider-reviews-nav"><span></span><span></span><span></span><span></span></div>
+                    <div class="reviews__act wow fadeIn"><button class="button button_b">Join Course</button></div>
+                </div>
+            </div>
+        </section><!-- =======-->
+        <!-- REVIEWS-->
+        <!-- =======-->
+        <!-- =====-->
+        <!-- SITES-->
+        <!-- =====-->
+        <div class="gradient">
+            <div class="container">
+                <div class="sites">
+                    <div class="sites__item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="sites__img"><img src="img/Stellar-Education-2.png" alt="" /></div>
+                        <div class="sites__about">
+                            <p>Is the world’s first UK Government SKILLSFIRST accredited training provider offering an insight into the world of finance and trading online.</p>
+                            <p>Stellar Education currently have 2 SKILLSFIRST accredited courses in Financial Trading – Level 3 and Level 5. Ideal for someone looking to trade part-time or look for a career in the Financial world. You can learn at your own pace with our experienced traders available for Skype calls if you have any questions.</p>
+                            <p>Both courses are recognised in banks and other Financial Institutions worldwide as the courses have their UK SKILLSFIRST status.</p>
+                            <p>Stellar Education uses a bespoke learning management system (LMS) for the delivery of the qualifications and they are assessed using our unique Online Invigilation System, which cannot be cheated or manipulated and is itself meets the strict guidelines set by awarding organisations regulated by SKILLSFIRST.</p>
+                        </div>
+                    </div>
+                    <div class="sites__item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="sites__img"><img src="img/logo-2.png" alt="" /></div>
+                        <div class="sites__about">
+                            <p>Is a British cryptocurrency exchange. The platform was established in 2013 and is constantly expanding its functionality, adding new assets to the listing, and, most importantly, increasing the number of customers. Now with more than 1.8 million users registered on EXMO, the average monthly trading volume exceeds $1.5 billion.</p>
+                            <p>More than six years of operation without data leaks and hacks, flexible commissions, and fast technical support – these are among a list of reasons why clients choose EXMO. The exchange team stood at the origins of the crypto business, and during this time, we understood how to make trading convenient. We pride ourselves on EXMO's simple, intuitive interface, allowing users to begin their journey in crypto-trading easily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- =====-->
+        <!-- SITES-->
+        <!-- =====-->
+        <!-- =============-->
+        <!-- OTHER COURSES-->
+        <!-- =============-->
+        <section class="section" id="section-other">
+            <div class="container">
+                <h2 class="section-header wow fadeIn">Other courses</h2>
+                <div class="other">
+                    <div class="other__item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="panel">
+                            <div class="panel__image" style="background-image: url(img/other-1.png)"></div>
+                            <div class="panel__content">
+                                <div class="panel__hide"></div><button class="panel__close"><svg class="svg-sprite">
+                                        <use xlink:href="#svgsprite_close"></use>
+                                    </svg></button>
+                                <div class="panel__show"></div>
+                                <div class="panel__header">Skillsfirst level 3 certificate in financial trading (rqf)</div>
+                                <div class="panel__text">
+                                    <p>Stellar Educations SKILLSFIRST Regulated 4 – 6 week high-impact Level 3 Certificate in Financial Trading course gives you the skills that you need to start trading on the market, or pursue a career within finance. Whether you want to increase your personal investment portfolio or develop your career within finance, this course will show you how to do it compliantly, effectively and safely.</p>
+                                    <p class="panel__hidden">Stellar Educations SKILLSFIRST Regulated 4 – 6 week high-impact Level 3 Certificate in Financial Trading course gives you the skills that you need to start trading on the market, or pursue a career within finance. Whether you want to increase your personal investment portfolio or develop your career within finance, this course will show you how to do it compliantly, effectively and safely.</p>
+                                </div><a class="more" href=""><span>Learn more</span><svg class="svg-sprite">
+                                        <use xlink:href="#svgsprite_link"></use>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other__item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="panel">
+                            <div class="panel__image" style="background-image: url(img/other-2.png)"></div>
+                            <div class="panel__content">
+                                <div class="panel__hide"></div><button class="panel__close"><svg class="svg-sprite">
+                                        <use xlink:href="#svgsprite_close"></use>
+                                    </svg></button>
+                                <div class="panel__show"></div>
+                                <div class="panel__header">Skillsfirst level 5 diploma in financial trading (rqf)</div>
+                                <div class="panel__text">
+                                    <p>This 100% online SKILLSFIRST Accredited programme has been designed to develop candidates into independent proprietary trading professionals who wish to pursue a full-time trading career, or pursue a career in finance. Initially, the trainee will be introduced to the global financial futures markets, and acquire a broad overview across a wide level of different futures trading strategies such as outright trading, spreads trading (including inter-exchange, intra-exchange and inter-commodity spreads) and arbitrage used across the FX, Fixed Income, Equities and Commodities markets.</p>
+                                    <p class="panel__hidden">Stellar Educations SKILLSFIRST Regulated 4 – 6 week high-impact Level 3 Certificate in Financial Trading course gives you the skills that you need to start trading on the market, or pursue a career within finance. Whether you want to increase your personal investment portfolio or develop your career within finance, this course will show you how to do it compliantly, effectively and safely.</p>
+                                </div><a class="more" href=""><span>Learn more</span><svg class="svg-sprite">
+                                        <use xlink:href="#svgsprite_link"></use>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- =================-->
+        <!-- END OTHER COURSES-->
+        <!-- =================-->
+        <!-- ======-->
+        <!-- FOOTER-->
+        <!-- ======-->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__top">
+                        <div class="footer__nav">
+                            <div class="footnav">
+                                <div class="footnav__cat">
+                                    <div class="footnav__name">Products</div>
+                                    <div class="footnav__list"><a class="footnav__item" href="">Funding</a><a class="footnav__item" href="">Trade</a><a class="footnav__item" href="">Cashback</a><a class="footnav__item" href="">Referral Program</a><a class="footnav__item" href="">EXMO Turkey</a><a class="footnav__item" href="">VIP-clients</a><a class="footnav__item" href="">OTC-Trading</a><a class="footnav__item" href="">EXMO Coin</a><a class="footnav__item" href="">Voting</a></div>
+                                </div>
+                                <div class="footnav__cat">
+                                    <div class="footnav__name">Information</div>
+                                    <div class="footnav__list"><a class="footnav__item" href="">Customer support</a><a class="footnav__item" href="">EXMOWIKI</a><a class="footnav__item" href="">Fees & Limits</a><a class="footnav__item" href="">Articles</a><a class="footnav__item" href="">API</a></div>
+                                </div>
+                                <div class="footnav__cat">
+                                    <div class="footnav__name">Company</div>
+                                    <div class="footnav__list"><a class="footnav__item" href="">Contacts</a><a class="footnav__item" href="">News</a><a class="footnav__item" href="">About Us</a><a class="footnav__item" href="">Join our team</a><a class="footnav__item" href="">Apply for Listing</a></div>
+                                </div>
+                                <div class="footnav__cat">
+                                    <div class="footnav__name">Documents</div>
+                                    <div class="footnav__list"><a class="footnav__item" href="">User agreement</a><a class="footnav__item" href="">AML Policy</a><a class="footnav__item" href="">Privacy policy</a><a class="footnav__item" href="">Cross-chain recovery policy</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__service">
+                            <div class="footer__online">
+                                <div class="footonline">
+                                    <div class="footonline__item">
+                                        <div class="footonline__name">Traders Online</div>
+                                        <div class="footonline__value">18998</div>
+                                    </div>
+                                    <div class="footonline__item">
+                                        <div class="footonline__name">24h Volume</div>
+                                        <div class="footonline__value">1434 BTC</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__apps"><a href=""><svg class="svg-sprite">
+                                        <use xlink:href="#svgsprite_appstore"></use>
+                                    </svg></a><a href=""><svg class="svg-sprite">
+                                        <use xlink:href="#svgsprite_googleplay"></use>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <div class="footer__copy">Copyright © EXMO 2013 — 2020, EXMO EXCHANGE LTD. 2 Kingdom Street, London, United Kingdom</div>
+                        <div class="footer__social"><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_facebook"></use>
+                                </svg></a><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_youtube"></use>
+                                </svg></a><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_medium"></use>
+                                </svg></a><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_twitter"></use>
+                                </svg></a><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_telegram"></use>
+                                </svg></a><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_instagram"></use>
+                                </svg></a><a href=""><svg class="svg-sprite">
+                                    <use xlink:href="#svgsprite_vk"></use>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+        </footer><!-- ==========-->
+        <!-- END FOOTER-->
+        <!-- ==========-->
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 77px;
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+  }
+  @include media-breakpoint-down(xs) {
+    margin-top: 30px;
+  }
+}
+.steps__item {
+  text-align: center;
+  position: relative;
+}
+.steps__item_end {
+  border: 2px solid $color-16;
+  border-radius: 20px;
+  padding: 51.5px 30px 72px;
+  margin-top: -54.5px;
+  box-sizing: border-box;
+  max-width: 262px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    margin-top: 0;
+    max-width: none;
+    padding: 51.5px 30px;
+  }
+  @include media-breakpoint-down(xs) {
+    width: calc(50% + 18px) !important;
+  }
+  .steps__name {
+    top: auto;
+    min-width: 100%;
+  }
+}
+.steps__item_content {
+  @include media-breakpoint-down(sm) {
+    &:nth-last-of-type(3) {
+      padding-top: 51.5px;
+    }
+
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-down(xs) {
+    &:nth-last-of-type(3) {
+      width: calc(50% - 18px) !important;
+    }
+  }
+}
+.steps__item_separator {
+  max-width: 194px;
+  width: 100%;
+  align-self: center;
+  transform: translateY(-37px);
+  padding: 0 15px;
+  box-sizing: border-box;
+  @include media-breakpoint-down(sm) {
+    position: absolute;
+    display: none;
+  }
+  .svg-sprite {
+    max-width: 100%;
+    max-height: 23px;
+  }
+}
+.steps__name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 2rem;
+  position: absolute;
+  min-width: 170px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include media-breakpoint-down(sm) {
+    position: static;
+    transform: none;
+    min-width: auto;
+    line-height: 1.4rem;
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 1rem;
+  }
+}
+.steps__icon {
+  height: 110px;
+}
+.steps__icon_register {
+  .svg-sprite {
+    max-width: 117px;
+    max-height: 96px;
+    @include media-breakpoint-down(xs) {
+      max-width: 84px;
+      max-height: 63px;
+    }
+  }
+}
+.steps__icon_learn {
+  .svg-sprite {
+    max-width: 78px;
+    max-height: 91px;
+    @include media-breakpoint-down(xs) {
+      max-width: 71px;
+      max-height: 82px;
+    }
+  }
+}
+.steps__icon_exam {
+  .svg-sprite {
+    max-width: 84px;
+    max-height: 104px;
+    @include media-breakpoint-down(xs) {
+      max-width: 73px;
+      max-height: 91px;
+    }
+  }
+}
+.steps__icon_certificate {
+  .svg-sprite {
+    max-width: 72px;
+    max-height: 109px;
+    @include media-breakpoint-down(xs) {
+      max-width: 64px;
+      max-height: 97px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.more {
+  display: inline-flex;
+  align-items: center;
+  color: $color-20;
+  font-weight: 700;
+  &:hover {
+    span {
+      margin-right: 17px;
+    }
+  }
+  .svg-sprite {
+    width: 18px;
+    height: 15px;
+    fill: $color-20;
+  }
+  span {
+    transition: margin $transition-time;
+    margin-right: 10px;
+  }
+}

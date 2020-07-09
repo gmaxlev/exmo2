@@ -1,0 +1,40 @@
+.button {
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.button_a {
+  background-color: $color-3;
+  border: 0;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 19.5px 28.438px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: background-color $transition-time;
+  &:hover {
+    background-color: $color-3-hover;
+  }
+  & > .svg-sprite {
+    width: 21px;
+    height: 21px;
+    margin-right: 12px;
+    fill: $color-4;
+    fill: $color-4;
+  }
+}
+.button_b {
+  background-color: $color-3;
+  border: 0;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 18px 41px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: background-color $transition-time;
+  &:hover {
+    background-color: $color-3-hover;
+  }
+}

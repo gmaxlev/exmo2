@@ -1,0 +1,171 @@
+@keyframes panel-hide {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes panel-show {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+
+.panel {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.panel__image {
+  height: 209px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include media-breakpoint-down(xs) {
+    height: 147px;
+  }
+}
+
+.panel__content {
+  padding: 35px 50px 57px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: -20px;
+  border: 1px solid $color-9;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 0;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  position: relative;
+  @include media-breakpoint-down(xs) {
+    padding: 20px 30px;
+  }
+}
+
+.panel__hide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  display: none;
+  &::after {
+    content: "";
+    height: 50px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 50px;
+  }
+}
+
+.panel__hide_show {
+  display: block;
+  animation: panel-hide 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.panel__show {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  display: none;
+  &::after {
+    content: "";
+    height: 50px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 50px;
+  }
+}
+.panel__show_show {
+  display: block;
+  animation: panel-show 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.panel__header {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 2.1875rem;
+  max-width: 337px;
+  @include media-breakpoint-down(xs) {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+.panel__hidden {
+  display: none;
+}
+.panel__text {
+  font-weight: 600;
+  line-height: 2rem;
+  color: $color-19;
+  margin-bottom: 20px;
+  @include media-breakpoint-down(xs) {
+    font-size: 0.875rem;
+    line-height: 1.5625rem;
+  }
+  p {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.panel_open {
+  .panel__close {
+    display: block;
+  }
+  .panel__content {
+    margin-top: 0;
+  }
+}
+.panel__close {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  border-radius: 0 0 0 20px;
+  background-color: $color-14;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  transition: background-color $transition-time;
+  &:hover {
+    background-color: darken($color-14, 5%);
+  }
+  .svg-sprite {
+    width: 15px;
+    height: 15px;
+    fill: $color-19;
+  }
+}

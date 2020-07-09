@@ -1,0 +1,31 @@
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.nav__item {
+  margin-left: 37px;
+  @include media-breakpoint-down(md) {
+    margin-left: 10px;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  & > a {
+    font-size: 0.8125rem;
+    line-height: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    transition: color $transition-time;
+    @include media-breakpoint-down(md) {
+      font-size: 0.75rem;
+    }
+    &:hover {
+      color: $color-3;
+    }
+  }
+}
