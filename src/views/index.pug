@@ -108,7 +108,7 @@ html(lang="ru")
                         | Trading course
                     p.intro__comment.wow.fadeInUp(data-wow-delay="0.5s") You'll find all the trading basics you need to know to get started on your journey here. Become not just a user, become a professional!
                     .intro__act.wow.fadeInUp(data-wow-delay="1s")
-                        button.button.button_a(data-scrollto="section-about")
+                        a(href="#section-about").button.button_a#intro-watch
                             +svg-sprite('svgsprite_play_1', 'svg-sprite')
                             span Watch now
             // ===============
@@ -250,10 +250,10 @@ html(lang="ru")
                 .container
                     h2.section-header Introduction to the course
                     .videoplay(style="background-image: url(img/video.png)")
-                        .videoplay__go
+                        .videoplay__go#introduction-video-start
                             +svg-sprite('svgsprite_play_1', 'svg-sprite')
                         .videoplay__video#introduction-video-wrapper
-                            video(width="100%" height="100%" controls)#introduction-video
+                            video(width="100%" height="100%" controls playsinline)#introduction-video
                                 source(src="videos/exmo.mp4" type="video/mp4")
             // =========
             // END VIDEO

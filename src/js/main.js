@@ -49,7 +49,17 @@ $(document).ready(function() {
    * Видео
    */
   (function() {
-    $(".videoplay__go").on("click", function(e) {
+    var start = false;
+    function eventFire(el, etype) {
+      if (el.fireEvent) {
+        el.fireEvent("on" + etype);
+      } else {
+        var evObj = document.createEvent("Events");
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+      }
+    }
+    $("#introduction-video-start").on("click", function(e) {
       e.preventDefault();
       var video = document.getElementById("introduction-video");
       $(this)
@@ -70,6 +80,27 @@ $(document).ready(function() {
       video.onplay = function() {
         openFullscreen();
       };
+    });
+    $("#intro-watch").on("click", function() {
+      setTimeout(function() {
+        eventFire(document.getElementById("introduction-video-start"), "click");
+      }, 100);
+      function onFullScreen() {
+        if (!start) {
+          window.scrollTo(0, 0);
+          start = true;
+        }
+      }
+
+      document
+        .getElementById("introduction-video")
+        .addEventListener("webkitfullscreenchange", onFullScreen);
+      document
+        .getElementById("introduction-video")
+        .addEventListener("mozfullscreenchange", onFullScreen);
+      document
+        .getElementById("introduction-video")
+        .addEventListener("fullscreenchange", onFullScreen);
     });
   })();
 
@@ -118,6 +149,10 @@ $(document).ready(function() {
       sliderReviewsInstall();
     }
     window.sliderReviewsReload = sliderReviewsReload;
+
+    setTimeout(function() {
+      sliderReviewsReload();
+    }, 2000);
 
     $(".reviews__more > a").on("click", function(e) {
       e.preventDefault();

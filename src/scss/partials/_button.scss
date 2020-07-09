@@ -13,6 +13,7 @@
   font-weight: 700;
   font-size: 1.125rem;
   transition: background-color $transition-time;
+  color: #000;
   &:hover {
     background-color: $color-3-hover;
   }
