@@ -252,7 +252,9 @@ html(lang="ru")
                     .videoplay(style="background-image: url(img/video.png)")
                         .videoplay__go
                             +svg-sprite('svgsprite_play_1', 'svg-sprite')
-                        .videoplay__video#introduction-video
+                        .videoplay__video#introduction-video-wrapper
+                            video(width="100%" height="100%" controls)#introduction-video
+                                source(src="videos/exmo.mp4" type="video/mp4")
             // =========
             // END VIDEO
             // =========
@@ -280,7 +282,9 @@ html(lang="ru")
                                                 | “I had very little knowledge on what it meant to be a futures trader, but soon after joining the course it wasn’t long until I found myself immersed in the markets!
                                                 p.reviews__hidden “I had very little knowledge on what it meant to be a futures trader, but soon after joining the course it wasn’t long until I found myself immersed in the markets!
                                             .reviews__more
-                                                a(href="") Read more
+                                                a(href="").toggle-more
+                                                    span Read more
+                                                    span Collapse
                                         .reviews__author
                                             img(src="img/author-2.png", alt="")
                                             span Yussef El Mansouri

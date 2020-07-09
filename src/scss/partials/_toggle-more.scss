@@ -1,0 +1,17 @@
+.toggle-more {
+  & > span {
+    &:last-child {
+      display: none;
+    }
+  }
+}
+.toggle-more_open {
+  & > span {
+    &:first-child {
+      display: none;
+    }
+    &:last-child {
+      display: inline;
+    }
+  }
+}

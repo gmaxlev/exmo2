@@ -49,55 +49,27 @@ $(document).ready(function() {
    * Видео
    */
   (function() {
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement("script");
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName("script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player("introduction-video", {
-        height: "100%",
-        width: "100%",
-        videoId: "M7lc1UVf-VE",
-        events: {
-          // onReady: onPlayerReady,
-          // onStateChange: onPlayerStateChange
-        }
-      });
-    }
-
-    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-      event.target.playVideo();
-    }
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
-      }
-    }
-    function stopVideo() {
-      player.stopVideo();
-    }
-
     $(".videoplay__go").on("click", function(e) {
       e.preventDefault();
-      player.playVideo();
+      var video = document.getElementById("introduction-video");
       $(this)
         .parent()
         .addClass("videoplay_start");
+      video.play();
+      function openFullscreen() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+          video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      }
+      video.onplay = function() {
+        openFullscreen();
+      };
     });
   })();
 
@@ -105,12 +77,18 @@ $(document).ready(function() {
    * Слайдер "Отзывы"
    */
   (function() {
+    var lastSlide = 0;
     function sliderReviewsInstall() {
       var sliderReviews = new Swiper("#slider-reviews", {
         slidesPerView: 1,
         spaceBetween: 32,
         autoHeight: true,
         calculateHeight: true,
+        on: {
+          init: function() {
+            this.slideTo(lastSlide);
+          }
+        },
         breakpoints: {
           [_breakpoints["lg"]]: {
             slidesPerView: 3,
@@ -129,6 +107,9 @@ $(document).ready(function() {
           }
         }
       });
+      sliderReviews.on("slideChange", function() {
+        lastSlide = sliderReviews.activeIndex;
+      });
       window.sliderReviews = sliderReviews;
     }
     sliderReviewsInstall();
@@ -137,6 +118,16 @@ $(document).ready(function() {
       sliderReviewsInstall();
     }
     window.sliderReviewsReload = sliderReviewsReload;
+
+    $(".reviews__more > a").on("click", function(e) {
+      e.preventDefault();
+      $(this)
+        .closest(".reviews")
+        .find(".reviews__hidden")
+        .toggle();
+      $(this).toggleClass("toggle-more_open");
+      sliderReviewsReload();
+    });
   })();
 
   /**
@@ -193,17 +184,6 @@ $(document).ready(function() {
             show.removeClass("panel__show_show");
           }, 2000);
         });
-    });
-  })();
-
-  (function() {
-    $(".reviews__more").on("click", function(e) {
-      e.preventDefault();
-      $(this)
-        .closest(".reviews")
-        .find(".reviews__hidden")
-        .toggle();
-      sliderReviewsReload();
     });
   })();
 
