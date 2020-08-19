@@ -168,7 +168,7 @@ $(document).ready(function() {
   /**
    * Открывающиеся текстовые блоки
    */
-  (function() {
+  /*   (function() {
     $(".panel").each(function(index, element) {
       var that = this;
       var panel = $(element);
@@ -220,7 +220,7 @@ $(document).ready(function() {
           }, 2000);
         });
     });
-  })();
+  })(); */
 
   /**
    * Плавная прокрутка
